@@ -25,6 +25,8 @@
 					colors: {
 						clifford: '#da373d',
 						primary: '#B4F461',
+						secondary: '#111',
+						secondary2: '#111111',
 					}
 				}
 			}
@@ -33,10 +35,131 @@
 </head>
 
 <body class="lexend">
-	<header>
-		<nav></nav>
+	<header class="w-full ">
+		<!-- navbar -->
+		<nav class="bg-[#F9F7F3]">
+			<div class="md:w-11/12 md:mx-auto pt-6 pb-14 flex items-center justify-around  md:justify-between">
+				<!-- blog button -->
+				<div class="flex-none">
+					<a href="#" class="btn bg-primary md:text-xl font-semibold hover:bg-primary px-8">Blog</a>
+				</div>
+				<!-- center button -->
+				<div class="text-center flex items-center gap-2">
+					<img class="w-12 h-12" src="./assets/logo.png" alt="">
+					<p class="hidden md:block text-xl font-semibold text-secondary">Donate Bangladesh</p>
+				</div>
+				<!-- account balance -->
+				<div class="flex items-center gap-2">
+					<img class="w-7 h-7" src="./assets/coin.png" alt="">
+					<span class="md:text-xl">5500 BDT</span>
+				</div>
+			</div>
+		</nav>
+		<div class="bg-white">
+			<div class="flex justify-center gap-4 md:pt-20 md:pb-12 pt-14 pb-8">
+				<button class="btn bg-primary md:px-8 md:text-xl text-secondary hover:bg-primary">Donation</button>
+				<button class="btn md:px-8 md:text-xl text-secondary hover:bg-primary">History</button>
+			</div>
+		</div>
 	</header>
-	<main></main>
+
+	<main>
+		<!-- donate Noakhali section -->
+		<section class="bg-white flex flex-col md:flex-row w-11/12 md:w-9/12 border rounded-xl mx-auto p-8 mb-8 gap-4">
+			<img class="md:w-4/12" src="./assets/noakhali.png" alt="">
+			<div class="md:ml-8">
+				<div class="btn flex items-center gap-2 mb-4 w-3/6 md:w-1/5">
+					<img class="w-6 h-6" src="./assets/coin.png" alt="">
+					<span>0 BDT</span>
+				</div>
+				<!-- text content -->
+				<div class="space-y-5">
+					<h2 class="text-xl font-semibold">Donate for Flood at Noakhali, Bangladesh</h2>
+					<p class="text-secondary2 font-light"> The recent floods in Noakhali have caused significant
+						damage
+						to
+						homes
+						infrastructure. Your
+						donation
+						will help provide essential supplies and to those affected by this disaster. Every contribution,
+						big
+						or small, makes difference. Please join us in supporting the relief efforts and making a
+						positive
+						impact on the lives of those in need.</p>
+					<label class=" form-control w-full">
+						<input type="text" placeholder="Write Donation Amount"
+							class="input input-bordered w-full py-7" />
+					</label>
+					<button class="btn bg-primary text-xl text-secondary w-full hover:bg-primary">Donate
+						Now</button>
+				</div>
+			</div>
+		</section>
+		<!-- donate Feni section -->
+		<section class="bg-white flex flex-col md:flex-row w-11/12 md:w-9/12 border rounded-xl mx-auto p-8 mb-8 gap-4">
+			<img class="md:w-4/12" src="./assets/feni.png" alt="">
+			<div class="md:ml-8">
+				<div class="btn flex items-center gap-3 mb-4 w-3/6 md:w-3/12">
+					<img class="w-6 h-6" src="./assets/coin.png" alt="">
+					<span>2400 BDT</span>
+				</div>
+				<!-- text content -->
+				<div class="space-y-5">
+					<h2 class="text-xl font-semibold">Donate for Flood Relief in Feni,Bangladesh</h2>
+					<p class="text-secondary2 font-light"> The recent floods in Noakhali have caused significant
+						damage
+						to
+						homes
+						infrastructure. Your
+						donation
+						will help provide essential supplies and to those affected by this disaster. Every contribution,
+						big
+						or small, makes difference. Please join us in supporting the relief efforts and making a
+						positive
+						impact on the lives of those in need.</p>
+					<label class=" form-control w-full">
+						<input type="text" placeholder="Write Donation Amount"
+							class="input input-bordered w-full py-7" />
+					</label>
+					<button class="btn bg-primary text-xl text-secondary w-full hover:bg-primary">Donate
+						Now</button>
+				</div>
+			</div>
+		</section>
+		<!-- Aid for Injured in the Quota Movement section -->
+		<section class="bg-white flex flex-col md:flex-row w-11/12 md:w-9/12 border rounded-xl mx-auto p-8 mb-8 gap-4">
+			<img class="md:w-4/12 " src="./assets/quota-protest.png" alt="">
+			<div class="md:ml-8">
+				<div class="btn flex items-center gap-3 mb-4 w-3/6 md:w-3/12">
+					<img class="w-6 h-6" src="./assets/coin.png" alt="">
+					<span>2400 BDT</span>
+				</div>
+				<!-- text content -->
+				<div class="space-y-5">
+					<h2 class="text-xl font-semibold">Donate for Flood at Noakhali, Bangladesh</h2>
+					<p class="text-secondary2 font-light"> The recent floods in Noakhali have caused significant
+						damage
+						to
+						homes
+						infrastructure. Your
+						donation
+						will help provide essential supplies and to those affected by this disaster. Every contribution,
+						big
+						or small, makes difference. Please join us in supporting the relief efforts and making a
+						positive
+						impact on the lives of those in need.</p>
+					<label class=" form-control w-full">
+						<input type="text" placeholder="Write Donation Amount"
+							class="input input-bordered w-full py-7" />
+					</label>
+					<button class="btn bg-primary text-xl text-secondary w-full hover:bg-primary">Donate
+						Now</button>
+				</div>
+			</div>
+		</section>
+
+
+	</main>
 </body>
 
 </html>
