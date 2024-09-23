@@ -52,7 +52,10 @@
 				<!-- account balance -->
 				<div class="flex items-center gap-2">
 					<img class="w-7 h-7" src="./assets/coin.png" alt="">
-					<span class="md:text-xl">5500 BDT</span>
+					<div>
+						<span id="total-balance" class="md:text-xl">5500</span>
+						<span>BDT</span>
+					</div>
 				</div>
 			</div>
 
@@ -65,14 +68,17 @@
 		</nav>
 	</header>
 
-	<main>
+	<main class="md:w-4/5 w-11/12 mx-auto">
 		<!-- donate Noakhali section -->
-		<section class="bg-white flex flex-col md:flex-row w-11/12 md:w-9/12 border rounded-xl mx-auto p-8 mb-8 gap-4">
+		<section class="bg-white flex flex-col md:flex-row border justify-between rounded-xl p-8 mb-8 gap-5">
 			<img class="md:w-4/12" src="./assets/noakhali.png" alt="">
 			<div class="md:ml-8">
 				<div class="btn flex items-center gap-2 mb-4 w-3/6 md:w-1/5">
 					<img class="w-6 h-6" src="./assets/coin.png" alt="">
-					<span>0 BDT</span>
+					<div>
+						<span id="first-amount">0</span>
+						<span>BDT</span>
+					</div>
 				</div>
 				<!-- text content -->
 				<div class="space-y-5">
@@ -89,21 +95,41 @@
 						positive
 						impact on the lives of those in need.</p>
 					<label class=" form-control w-full">
-						<input type="text" placeholder="Write Donation Amount"
+						<input id="input-field" type="text" placeholder="Write Donation Amount"
 							class="input input-bordered w-full py-7" />
 					</label>
-					<button class="btn bg-primary text-xl text-secondary w-full hover:bg-primary">Donate
+					<button id="first-donate-btn" class="btn  bg-primary text-xl text-secondary w-full hover:bg-primary"
+						onclick="my_modal_1.showModal()">Donate
 						Now</button>
+					<!-- ------modal start -------->
+					<dialog id="my_modal_1" class="modal mx-auto">
+						<form method="dialog"
+							class="modal-box px-5 py-10 flex flex-col justify-center items-center bg-white rounded-3xl">
+							<h3 class="font-bold text-3xl my-5">Congrates!</h3>
+							<img src="./assets/coin.png" alt="">
+							<div class="text-center">
+								<p class="mt-2">You Have Donate Humankind</p>
+							</div>
+							<p class="my-2 text-xl text-black font-bold">Successfully</p>
+							<button
+								class="btn px-16 text-white btn-md bg-primary hover:bg-black transition-colors ease-in duration-200">Close
+								Confirmation</button>
+						</form>
+					</dialog>
+					<!-- ------modal end -------->
 				</div>
 			</div>
 		</section>
 		<!-- donate Feni section -->
-		<section class="bg-white flex flex-col md:flex-row w-11/12 md:w-9/12 border rounded-xl mx-auto p-8 mb-8 gap-4">
+		<section class="bg-white flex flex-col md:flex-row border justify-between rounded-xl p-8 mb-8 gap-5">
 			<img class="md:w-4/12" src="./assets/feni.png" alt="">
 			<div class="md:ml-8">
 				<div class="btn flex items-center gap-3 mb-4 w-3/6 md:w-3/12">
 					<img class="w-6 h-6" src="./assets/coin.png" alt="">
-					<span>2400 BDT</span>
+					<div>
+						<span id="second-balance">600</span>
+						<span>BDT</span>
+					</div>
 				</div>
 				<!-- text content -->
 				<div class="space-y-5">
@@ -123,18 +149,38 @@
 						<input type="text" placeholder="Write Donation Amount"
 							class="input input-bordered w-full py-7" />
 					</label>
-					<button class="btn bg-primary text-xl text-secondary w-full hover:bg-primary">Donate
+					<button id="second-donate-btn" class="btn bg-primary text-xl text-secondary w-full hover:bg-primary"
+						onclick="my_modal_2.showModal()">Donate
 						Now</button>
+					<!-- -----modal 2nd start----- -->
+					<dialog id="my_modal_2" class="modal mx-auto">
+						<form method="dialog"
+							class="modal-box px-5 py-10 flex flex-col justify-center items-center bg-white rounded-3xl">
+							<h3 class="font-bold text-3xl my-5">Congrates!</h3>
+							<img src="./assets/coin.png" alt="">
+							<div class="text-center">
+								<p class="mt-2">You Have Donate Humankind</p>
+							</div>
+							<p class="my-2 text-xl text-black font-bold">Successfully</p>
+							<button
+								class="btn px-16 text-white btn-md bg-primary hover:bg-black transition-colors ease-in duration-200">Close
+								Confirmation</button>
+						</form>
+					</dialog>
+					<!-- -----modal 2nd end------->
 				</div>
 			</div>
 		</section>
 		<!-- Aid for Injured in the Quota Movement section -->
-		<section class="bg-white flex flex-col md:flex-row w-11/12 md:w-9/12 border rounded-xl mx-auto p-8 mb-8 gap-4">
+		<section class="bg-white flex flex-col md:flex-row border rounded-xl p-8 mb-8 gap-5">
 			<img class="md:w-4/12 " src="./assets/quota-protest.png" alt="">
 			<div class="md:ml-8">
 				<div class="btn flex items-center gap-3 mb-4 w-3/6 md:w-3/12">
 					<img class="w-6 h-6" src="./assets/coin.png" alt="">
-					<span>2400 BDT</span>
+					<div>
+						<span id="third-balance">2400</span>
+						<span>BDT</span>
+					</div>
 				</div>
 				<!-- text content -->
 				<div class="space-y-5">
@@ -154,14 +200,31 @@
 						<input type="text" placeholder="Write Donation Amount"
 							class="input input-bordered w-full py-7" />
 					</label>
-					<button class="btn bg-primary text-xl text-secondary w-full hover:bg-primary">Donate
+					<button id="third-donate-btn" class="btn bg-primary text-xl text-secondary w-full hover:bg-primary"
+						onclick="my_modal_3.showModal()">Donate
 						Now</button>
+					<!-- -----modal 3rd start----- -->
+					<dialog id="my_modal_3" class="modal mx-auto">
+						<form method="dialog"
+							class="modal-box px-5 py-10 flex flex-col justify-center items-center bg-white rounded-3xl">
+							<h3 class="font-bold text-3xl my-5">Congrates!</h3>
+							<img src="./assets/coin.png" alt="">
+							<div class="text-center">
+								<p class="mt-2">You Have Donate Humankind</p>
+							</div>
+							<p class="my-2 text-xl text-black font-bold">Successfully</p>
+							<button
+								class="btn px-16 btn-md text-white bg-primary hover:bg-black transition-colors ease-in duration-200">Close
+								Confirmation</button>
+						</form>
+					</dialog>
+					<!-- -----modal 3rd end------->
 				</div>
 			</div>
 		</section>
-
-
 	</main>
+	<script src="/js/utilities.js"></script>
+	<script src="/js/donate.js"></script>
 </body>
 
 </html>
