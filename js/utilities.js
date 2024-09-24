@@ -11,3 +11,12 @@ function getTextFieldValueById(id) {
 	const textNumber = parseFloat(textValue);
 	return textNumber;
 }
+
+
+function showBtn(id) {
+	// hide
+	document.getElementById('history').classList.add('hidden');
+	document.getElementById('donation').classList.add('hidden');
+	// show
+	document.getElementById(id).classList.remove('hidden');
+}

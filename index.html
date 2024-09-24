@@ -61,8 +61,17 @@
 
 			<div class="bg-white">
 				<div class="sticky top-0 left-0 flex justify-center gap-4 md:pt-20 md:pb-10 pt-10 pb-8">
-					<button class="btn bg-primary md:px-8 md:text-xl text-secondary hover:bg-primary">Donation</button>
-					<button class="btn md:px-8 md:text-xl text-secondary hover:bg-primary">History</button>
+					<button id="donation-add-btn"
+						class="btn bg-primary md:px-8 md:text-xl text-secondary hover:bg-primary"
+						onclick="showDonation">Donation</button>
+					<div>
+						<button id="history-add-btn" class="btn md:px-8 md:text-xl text-secondary hover:bg-primary"
+							onclick="showHistory">History</button>
+						<div id="history-container"></div>
+						<div>
+							<a href="historyapp.html"></a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</nav>
@@ -82,7 +91,8 @@
 				</div>
 				<!-- text content -->
 				<div class="space-y-5">
-					<h2 class="text-xl font-semibold">Donate for Flood at Noakhali, Bangladesh</h2>
+					<h2 id="first-place-name" class="text-xl font-semibold">Donate for Flood at Noakhali, Bangladesh
+					</h2>
 					<p class="text-secondary2 font-light"> The recent floods in Noakhali have caused significant
 						damage
 						to
@@ -95,11 +105,11 @@
 						positive
 						impact on the lives of those in need.</p>
 					<label class=" form-control w-full">
-						<input id="input-field" type="text" placeholder="Write Donation Amount"
+						<input id="first-input-field" type="text" placeholder="Write Donation Amount"
 							class="input input-bordered w-full py-7" />
 					</label>
-					<button id="first-donate-btn" class="btn  bg-primary text-xl text-secondary w-full hover:bg-primary"
-						onclick="my_modal_1.showModal()">Donate
+					<button id="first-donate-btn"
+						class="btn  bg-primary text-xl text-secondary w-full hover:bg-primary">Donate
 						Now</button>
 					<!-- ------modal start -------->
 					<dialog id="my_modal_1" class="modal mx-auto">
@@ -146,7 +156,7 @@
 						positive
 						impact on the lives of those in need.</p>
 					<label class=" form-control w-full">
-						<input type="text" placeholder="Write Donation Amount"
+						<input id="first-input-field" type="text" placeholder="Write Donation Amount"
 							class="input input-bordered w-full py-7" />
 					</label>
 					<button id="second-donate-btn" class="btn bg-primary text-xl text-secondary w-full hover:bg-primary"
@@ -197,7 +207,7 @@
 						positive
 						impact on the lives of those in need.</p>
 					<label class=" form-control w-full">
-						<input type="text" placeholder="Write Donation Amount"
+						<input id="third-input-field" type="text" placeholder="Write Donation Amount"
 							class="input input-bordered w-full py-7" />
 					</label>
 					<button id="third-donate-btn" class="btn bg-primary text-xl text-secondary w-full hover:bg-primary"
@@ -223,8 +233,8 @@
 			</div>
 		</section>
 	</main>
-	<script src="/js/utilities.js"></script>
-	<script src="/js/donate.js"></script>
+	<script src="./js/utilities.js"></script>
+	<script src="./js/donate.js"></script>
 </body>
 
 </html>
