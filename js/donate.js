@@ -1,7 +1,7 @@
 document.getElementById('first-donate-btn').addEventListener('click', function () {
 
 
-	const addMoney = getInputFieldValueById('first-input-field', 'second-input-field', 'third-input-field');
+	const addMoney = getInputFieldValueById('first-input-field');
 	const balance = getTextFieldValueById('first-amount');
 	const totalAmount = getTextFieldValueById('total-balance')
 
@@ -18,7 +18,6 @@ document.getElementById('first-donate-btn').addEventListener('click', function (
 		alert('Invalid Donation Amount');
 		return;
 	}
-
 	else if (addMoney > totalAmount) {
 		alert('Donation exceeds available balance');
 		return;
@@ -28,31 +27,111 @@ document.getElementById('first-donate-btn').addEventListener('click', function (
 		myModal.showModal();
 	}
 
-	// history transaction
+	// history
 
-	const donationTime = new Date().toLocaleString();
-	const addDonationPlace = document.getElementById('history-container').innerText;
-	const div = document.createElement('div');
-	div.classList.add('bg-yellow-a00');
-	div.innerHTML = `
-	<div>
-	<h4 class="text-2xl font-bold">100tk is Donated for Donate for Flood at Noakhali, Bangladesh </h4>
-	<p>${donationTime}</p>
-	<p>${addDonationPlace}</p>
-	<p>${addMoney}</p>
-
+	const inputField = getInputFieldValueById('first-input-field');
+	const donationTime = new Date();
+	const donationPlace = getTextFieldValueById('first-place-name');
+	const transaction = document.getElementById('history');
+	transaction.innerHTML += `
+	<div class="border p-5 rounded-xl lg:w-4/5 w-11/12 mx-auto">
+	<p class="font-bold text-xl">${inputField} Taka is ${donationPlace} </p>
+	<p class="text-sm text-gray-600 mt-2">date:${donationTime}</p>
 	</div>
-
 	`
-	document.getElementById('history-container').appendChild(div);
+});
+
+document.getElementById('second-donate-btn').addEventListener('click', function () {
+
+	const addMoney = getInputFieldValueById('second-input-field');
+	const balance = parseFloat(getTextFieldValueById('second-amount'));
+
+	const totalAmount = parseFloat(getTextFieldValueById('total-balance'));
+
+	const newBalance = balance + addMoney;
+	document.getElementById('second-amount').onpointerenter = newBalance;
+
+	const decreaseBalance = totalAmount - addMoney;
+	Document.getElementById('total-balance').innerText = decreaseBalance;
+
+	if (isNaN(addMoney) || addMoney <= 0) {
+		alert('Invalid Donation Amount');
+		return;
+	}
+	else if (addMoney > totalAmount) {
+		alert('Donation exceeds available balance');
+		return;
+	}
+	else {
+		const myModal = document.getElementById('my_modal_1')
+		myModal.showModal();
+	}
+
+	// history 2
+
+	const inputField = getInputFieldValueById('second-input-field');
+	const donationTime = new Date();
+	const donationPlace = getTextFieldValueById('second-place-name');
+	const transaction = document.getElementById('history');
+	transaction.innerHTML += `
+	<div class="border p-5 rounded-xl lg:w-4/5 w-11/12 mx-auto">
+	<p class="font-bold text-xl">${inputField} Taka is ${donationPlace} </p>
+	<p class="text-sm text-gray-600 mt-2">date:${donationTime}</p>
+	</div>
+	`
+});
 
 
+document.getElementById('third-donate-btn"').addEventListener('click', function () {
+	const addMoney = getInputFieldValueById('third-input-field');
+	const balance = parseFloat(getTextFieldValueById('third-amount'));
+
+	const totalAmount = parseFloat(getTextFieldValueById('total-balance'));
+
+	const newBalance = balance + addMoney;
+	document.getElementById('third-amount').onpointerenter = newBalance;
+
+	const decreaseBalance = totalAmount - addMoney;
+	Document.getElementById('total-balance').innerText = decreaseBalance;
+
+
+	if (isNaN(addMoney) || addMoney <= 0) {
+		alert('Invalid Donation Amount');
+		return;
+	}
+	else if (addMoney > totalAmount) {
+		alert('Donation exceeds available balance');
+		return;
+	}
+	else {
+		const myModal = document.getElementById('my_modal_1')
+		myModal.showModal();
+	}
+
+	const inputField = getInputFieldValueById('third-input-field');
+	const donationTime = new Date();
+	const donationPlace = getTextFieldValueById('third-place-name');
+	const transaction = document.getElementById('history');
+	transaction.innerHTML += `
+	<div class="border p-5 rounded-xl lg:w-4/5 w-11/12 mx-auto">
+	<p class="font-bold text-xl">${inputField} Taka is ${donationPlace} </p>
+	<p class="text-sm text-gray-600 mt-2">date:${donationTime}</p>
+	</div>
+	`
+
+});
+
+
+// history btn
+
+document.getElementById('donation-add-btn').addEventListener('click', function () {
+
+	showbtn('donation');
+	showbtnColor('donation-add-btn');
 });
 
 document.getElementById('donation-add-btn').addEventListener('click', function () {
-	showbtn('donaiton');
-});
 
-document.getElementById('history-add-btn').addEventListener('click', function () {
-	showbtn('history')
+	showbtn('history');
+	showbtnColor('history-add-btn');
 });

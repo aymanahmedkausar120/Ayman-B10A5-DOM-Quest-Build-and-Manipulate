@@ -12,11 +12,20 @@ function getTextFieldValueById(id) {
 	return textNumber;
 }
 
+// history button
 
-function showBtn(id) {
-	// hide
-	document.getElementById('history').classList.add('hidden');
+function showbtn(id) {
+	document.getElementById('history').classlist.add('hidden');
 	document.getElementById('donation').classList.add('hidden');
-	// show
+
 	document.getElementById(id).classList.remove('hidden');
 }
+
+function showbtnColor(id) {
+	document.getElementById('history-add-btn').classList.remove('bg-lime-300');
+	document.getElementById('donation-add-btn').classList.remove('bg-lime-300');
+
+	document.getElementById(id).classList.add('bg-lime-300');
+}
+
+
