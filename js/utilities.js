@@ -7,9 +7,8 @@ function getInputFieldValueById(id) {
 
 
 function getTextFieldValueById(id) {
-	const textValue = document.getElementById(id);
-	const textNumber = parseFloat(textValue.innerText);
-	return textNumber;
+	const textValue = document.getElementById(id).innerText;
+	return textValue;
 };
 
 // history button
