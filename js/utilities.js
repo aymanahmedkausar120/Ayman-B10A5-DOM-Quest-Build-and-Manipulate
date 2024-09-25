@@ -20,6 +20,7 @@ function showBtn(id) {
 	document.getElementById(id).classList.remove('hidden');
 };
 
+document.getElementById('donation-add-btn').classList.add('bg-lime-300');
 function showBtnColor(id) {
 	document.getElementById('history-add-btn').classList.remove('bg-lime-300');
 	document.getElementById('donation-add-btn').classList.remove('bg-lime-300');
