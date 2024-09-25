@@ -5,29 +5,36 @@ document
 		const balance = parseFloat(getTextFieldValueById("first-amount"));
 		const totalAmount = parseFloat(getTextFieldValueById("total-balance"));
 
+		if (isNaN(addMoney) || addMoney <= 0) {
+			alert("Invalid Donation Amount");
+			return;
+		}
+		if (addMoney > totalAmount) {
+			alert("Donation exceeds available balance");
+			return;
+		}
+
+
 		const newBalance = balance + addMoney;
 		document.getElementById("first-amount").innerText = newBalance;
 
 		const decreaseBalance = totalAmount - addMoney;
 		document.getElementById("total-balance").innerText = decreaseBalance;
 
-		if (isNaN(addMoney) || addMoney <= 0) {
-			alert("Invalid Donation Amount");
-			return;
-		} else if (addMoney > totalAmount) {
-			alert("Donation exceeds available balance");
-			return;
-		} else {
-			const myModal = document.getElementById("my_modal_1");
-			myModal.showModal();
-		}
+
+
+		const myModal = document.getElementById("my_modal_1");
+		myModal.showModal();
+
+
+
 
 		// History
 		const inputField = getInputFieldValueById("first-input-field");
 		const donationTime = new Date();
 		const donationPlace = getTextFieldValueById("first-place-name");
-		const transcation = document.getElementById("history");
-		transcation.innerHTML += `
+		const transaction = document.getElementById("history");
+		transaction.innerHTML += `
    <div class="border p-5 rounded-xl lg:w-4/5 w-11/12 mx-auto">
    <p class='font-bold text-xl'>${inputField} Taka is  ${donationPlace}</p>
    <p class='text-sm text-gray-600 mt-2'>Date: ${donationTime}</p>
@@ -43,29 +50,38 @@ document
 		console.log(balance);
 		const totalAmount = parseFloat(getTextFieldValueById("total-balance"));
 		console.log(totalAmount);
+
+
+		if (isNaN(addMoney) || addMoney <= 0) {
+			alert("Invalid Donation Amount");
+			return;
+		}
+		if (addMoney > totalAmount) {
+			alert("Donation exceeds available balance");
+			return;
+		}
+
+
+
 		const newBalance = balance + addMoney;
 		document.getElementById("second-balance").innerText = newBalance;
 
 		const decreaseBalance = totalAmount - addMoney;
 		document.getElementById("total-balance").innerText = decreaseBalance;
 
-		if (isNaN(addMoney) || addMoney <= 0) {
-			alert("Invalid Donation Amount");
-			return;
-		} else if (addMoney > totalAmount) {
-			alert("Donation exceeds available balance");
-			return;
-		} else {
-			const myModal = document.getElementById("my_modal_1");
-			myModal.showModal();
-		}
+
+		const myModal = document.getElementById("my_modal_1");
+		myModal.showModal();
+
+
+
 
 		// History
 		const inputField = getInputFieldValueById("second-input-field");
 		const donationTime = new Date();
 		const donationPlace = getTextFieldValueById("second-place-name");
-		const transcation = document.getElementById("history");
-		transcation.innerHTML += `
+		const transaction = document.getElementById("history");
+		transaction.innerHTML += `
    <div class="border p-5 rounded-xl lg:w-4/5 w-11/12 mx-auto">
    <p class='font-bold text-xl'>${inputField} Taka is  ${donationPlace}</p>
    <p class='text-sm text-gray-600 mt-2'>Date: ${donationTime}</p>
@@ -77,8 +93,20 @@ document
 	.getElementById("third-donate-btn")
 	.addEventListener("click", function () {
 		const addMoney = getInputFieldValueById("third-input-field");
-		const balance = parseFloat(getTextFieldValueById("third-balance"));
+		const balance = getTextFieldValueById("third-balance");
 		const totalAmount = parseFloat(getTextFieldValueById("total-balance"));
+
+
+		if (isNaN(addMoney) || addMoney <= 0) {
+			alert("Invalid Donation Amount");
+			return;
+		}
+		if (addMoney > totalAmount) {
+			alert("Donation exceeds available balance");
+			return;
+		}
+
+
 
 		const newBalance = balance + addMoney;
 		document.getElementById("third-balance").innerText = newBalance;
@@ -86,23 +114,17 @@ document
 		const decreaseBalance = totalAmount - addMoney;
 		document.getElementById("total-balance").innerText = decreaseBalance;
 
-		if (isNaN(addMoney) || addMoney <= 0) {
-			alert("Invalid Donation Amount");
-			return;
-		} else if (addMoney > totalAmount) {
-			alert("Donation exceeds available balance");
-			return;
-		} else {
-			const myModal = document.getElementById("my_modal_1");
-			myModal.showModal();
-		}
+		const myModal = document.getElementById("my_modal_1");
+		myModal.showModal();
+
+
 
 		// History
 		const inputField = getInputFieldValueById("third-input-field");
 		const donationTime = new Date();
 		const donationPlace = getTextFieldValueById("thrid-place-name");
-		const transcation = document.getElementById("history");
-		transcation.innerHTML += `
+		const transaction = document.getElementById("history");
+		transaction.innerHTML += `
    <div class="border p-5 rounded-xl lg:w-4/5 w-11/12 mx-auto">
    <p class='font-bold text-xl'>${inputField} Taka is  ${donationPlace}</p>
    <p class='text-sm text-gray-600 mt-2'>Date: ${donationTime}</p>
