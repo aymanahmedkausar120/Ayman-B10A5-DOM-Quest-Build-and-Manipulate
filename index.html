@@ -2,17 +2,17 @@
 <html lang="en" data-theme="light">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Donate Bangladesh</title>
 
 	<!-- daisyUI CDN link  -->
 	<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 	<script src="https://cdn.tailwindcss.com"></script>
 	<!--  google fonts link -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
 	<style>
 		.lexend {
 			font-family: "Lexend", sans-serif;
@@ -24,23 +24,23 @@
 			theme: {
 				extend: {
 					colors: {
-						clifford: '#da373d',
-						primary: '#B4F461',
-						secondary: '#111',
-						secondary2: '#111111',
-					}
-				}
-			}
-		}
+						clifford: "#da373d",
+						primary: "#B4F461",
+						secondary: "#111",
+						secondary2: "#111111",
+					},
+				},
+			},
+		};
 	</script>
 </head>
 
 <body class="lexend">
-	<header>
+	<header class="sticky top-0 left-0 backdrop-blur bg-opacity-30 bg-red-50">
 		<!-- btn section start -->
-		<div id="btn-section" class="bg-[#F9F7F3] sticky top-0 left-0">
-			<nav>
-				<div class="md:w-11/12 md:mx-auto pt-6 pb-14 flex items-center justify-around       md:justify-between">
+		<div id="btn-section">
+			<nav class="">
+				<div class="md:w-11/12 md:mx-auto pt-6 pb-14 flex items-center justify-around md:justify-between">
 					<!-- blog button -->
 					<div class="flex-none">
 						<a href="blogs.html"
@@ -48,12 +48,56 @@
 					</div>
 					<!-- center button -->
 					<div class="text-center flex items-center gap-2">
-						<img class="w-12 h-12" src="./assets/logo.png" alt="">
-						<p class="hidden md:block text-xl font-semibold text-secondary">Donate Bangladesh</p>
+						<img class="w-12 h-12" src="./assets/logo.png" alt="" />
+						<p class="hidden md:block text-xl font-semibold text-secondary">
+							Donate Bangladesh
+						</p>
 					</div>
 					<!-- account balance -->
 					<div class="flex items-center gap-2">
-						<img class="w-7 h-7" src="./assets/coin.png" alt="">
+						<img class="w-7 h-7" src="./assets/coin.png" alt="" />
+						<div>
+							<span id="total-balance" class="md:text-xl">5500</span>
+							<span>BDT</span>
+						</div>
+					</div>
+				</div>
+
+				<div>
+					<div class="sticky top-0 left-0 flex justify-center gap-4 md:pt-20 md:pb-10 pt-10 pb-8">
+						<button id="donation-add-btn" class="btn bg-primary md:px-8 md:text-xl text-secondary">
+							Donation
+						</button>
+						<div>
+							<button id="history-add-btn" class="btn md:px-8 md:text-xl text-secondary">
+								History
+							</button>
+							<div id="history-container"></div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<!-- btn section end -->
+		<!-- history section start-->
+		<div id="history-section" class="hidden bg-[#F9F7F3] sticky top-0 left-0">
+			<nav>
+				<div class="md:w-11/12 md:mx-auto pt-6 pb-14 flex items-center justify-around md:justify-between">
+					<!-- blog button -->
+					<div class="flex-none">
+						<a href="blogs.html"
+							class="btn bg-primary md:text-xl font-semibold hover:bg-primary px-8">Blog</a>
+					</div>
+					<!-- center button -->
+					<div class="text-center flex items-center gap-2">
+						<img class="w-12 h-12" src="./assets/logo.png" alt="" />
+						<p class="hidden md:block text-xl font-semibold text-secondary">
+							Donate Bangladesh
+						</p>
+					</div>
+					<!-- account balance -->
+					<div class="flex items-center gap-2">
+						<img class="w-7 h-7" src="./assets/coin.png" alt="" />
 						<div>
 							<span id="total-balance" class="md:text-xl">5500</span>
 							<span>BDT</span>
@@ -63,27 +107,29 @@
 
 				<div class="bg-white">
 					<div class="sticky top-0 left-0 flex justify-center gap-4 md:pt-20 md:pb-10 pt-10 pb-8">
-						<button id="donation-add-btn"
-							class="btn bg-primary md:px-8 md:text-xl text-secondary hover:bg-primary">Donation</button>
+						<button id="donation-add-btn" class="btn md:px-8 md:text-xl text-secondary">
+							Donation
+						</button>
 						<div>
-							<button id="history-add-btn" class="btn md:px-8 md:text-xl text-secondary">History</button>
+							<button id="history-add-btn" class="btn bg-primary md:px-8 md:text-xl text-secondary">
+								History
+							</button>
 							<div id="history-container"></div>
 						</div>
 					</div>
 				</div>
 			</nav>
 		</div>
-		<!-- btn section end -->
+		<!-- history section end-->
 	</header>
 
-
-	<main class="md:w-4/5 w-11/12 mx-auto">
+	<main id="donation" class="md:w-4/5 w-11/12 mx-auto">
 		<!-- donate Noakhali section -->
 		<section class="bg-white flex flex-col md:flex-row border justify-between rounded-xl p-8 mb-8 gap-5">
-			<img class="md:w-4/12" src="./assets/noakhali.png" alt="">
+			<img class="md:w-4/12" src="./assets/noakhali.png" alt="" />
 			<div class="md:ml-8">
 				<div class="btn flex items-center gap-2 mb-4 w-3/6 md:w-1/5">
-					<img class="w-6 h-6" src="./assets/coin.png" alt="">
+					<img class="w-6 h-6" src="./assets/coin.png" alt="" />
 					<div>
 						<span id="first-amount">0</span>
 						<span>BDT</span>
@@ -91,39 +137,38 @@
 				</div>
 				<!-- text content -->
 				<div class="space-y-5">
-					<h2 id="first-place-name" class="text-xl font-semibold">Donate for Flood at Noakhali, Bangladesh
+					<h2 id="first-place-name" class="text-xl font-semibold">
+						Donate for Flood at Noakhali, Bangladesh
 					</h2>
-					<p class="text-secondary2 font-light"> The recent floods in Noakhali have caused significant
-						damage
-						to
-						homes
-						infrastructure. Your
-						donation
-						will help provide essential supplies and to those affected by this disaster. Every contribution,
-						big
-						or small, makes difference. Please join us in supporting the relief efforts and making a
-						positive
-						impact on the lives of those in need.</p>
-					<label class=" form-control w-full">
+					<p class="text-secondary2 font-light">
+						The recent floods in Noakhali have caused significant damage to
+						homes infrastructure. Your donation will help provide essential
+						supplies and to those affected by this disaster. Every
+						contribution, big or small, makes difference. Please join us in
+						supporting the relief efforts and making a positive impact on the
+						lives of those in need.
+					</p>
+					<label class="form-control w-full">
 						<input id="first-input-field" type="text" placeholder="Write Donation Amount"
 							class="input input-bordered w-full py-7" />
 					</label>
-					<button id="first-donate-btn"
-						class="btn  bg-primary text-xl text-secondary w-full hover:bg-primary">Donate
-						Now</button>
+					<button id="first-donate-btn" class="btn bg-primary text-xl text-secondary w-full hover:bg-primary">
+						Donate Now
+					</button>
 					<!-- ------modal start -------->
 					<dialog id="my_modal_1" class="modal mx-auto">
 						<form method="dialog"
 							class="modal-box px-5 py-10 flex flex-col justify-center items-center bg-white rounded-3xl">
 							<h3 class="font-bold text-3xl my-5">Congrates!</h3>
-							<img src="./assets/coin.png" alt="">
+							<img src="./assets/coin.png" alt="" />
 							<div class="text-center">
 								<p class="mt-2">You Have Donate Humankind</p>
 							</div>
 							<p class="my-2 text-xl text-black font-bold">Successfully</p>
 							<button
-								class="btn px-16 text-white btn-md bg-primary hover:bg-black transition-colors ease-in duration-200">Close
-								Confirmation</button>
+								class="btn px-16 text-white btn-md bg-primary hover:bg-black transition-colors ease-in duration-200">
+								Close Confirmation
+							</button>
 						</form>
 					</dialog>
 					<!-- ------modal end -------->
@@ -132,10 +177,10 @@
 		</section>
 		<!-- donate Feni section -->
 		<section class="bg-white flex flex-col md:flex-row border justify-between rounded-xl p-8 mb-8 gap-5">
-			<img class="md:w-4/12" src="./assets/feni.png" alt="">
+			<img class="md:w-4/12" src="./assets/feni.png" alt="" />
 			<div class="md:ml-8">
 				<div class="btn flex items-center gap-3 mb-4 w-3/6 md:w-3/12">
-					<img class="w-6 h-6" src="./assets/coin.png" alt="">
+					<img class="w-6 h-6" src="./assets/coin.png" alt="" />
 					<div>
 						<span id="second-balance">600</span>
 						<span>BDT</span>
@@ -143,38 +188,39 @@
 				</div>
 				<!-- text content -->
 				<div class="space-y-5">
-					<h2 class="text-xl font-semibold">Donate for Flood Relief in Feni,Bangladesh</h2>
-					<p class="text-secondary2 font-light"> The recent floods in Noakhali have caused significant
-						damage
-						to
-						homes
-						infrastructure. Your
-						donation
-						will help provide essential supplies and to those affected by this disaster. Every contribution,
-						big
-						or small, makes difference. Please join us in supporting the relief efforts and making a
-						positive
-						impact on the lives of those in need.</p>
-					<label class=" form-control w-full">
-						<input id="first-input-field" type="text" placeholder="Write Donation Amount"
+					<h2 id="second-place-name" class="text-xl font-semibold">
+						Donate for Flood Relief in Feni,Bangladesh
+					</h2>
+					<p class="text-secondary2 font-light">
+						The recent floods in Noakhali have caused significant damage to
+						homes infrastructure. Your donation will help provide essential
+						supplies and to those affected by this disaster. Every
+						contribution, big or small, makes difference. Please join us in
+						supporting the relief efforts and making a positive impact on the
+						lives of those in need.
+					</p>
+					<label class="form-control w-full">
+						<input id="second-input-field" type="text" placeholder="Write Donation Amount"
 							class="input input-bordered w-full py-7" />
 					</label>
-					<button id="second-donate-btn" class="btn bg-primary text-xl text-secondary w-full hover:bg-primary"
-						onclick="my_modal_2.showModal()">Donate
-						Now</button>
+					<button id="second-donate-btn"
+						class="btn bg-primary text-xl text-secondary w-full hover:bg-primary">
+						Donate Now
+					</button>
 					<!-- -----modal 2nd start----- -->
 					<dialog id="my_modal_2" class="modal mx-auto">
 						<form method="dialog"
 							class="modal-box px-5 py-10 flex flex-col justify-center items-center bg-white rounded-3xl">
 							<h3 class="font-bold text-3xl my-5">Congrates!</h3>
-							<img src="./assets/coin.png" alt="">
+							<img src="./assets/coin.png" alt="" />
 							<div class="text-center">
 								<p class="mt-2">You Have Donate Humankind</p>
 							</div>
 							<p class="my-2 text-xl text-black font-bold">Successfully</p>
 							<button
-								class="btn px-16 text-white btn-md bg-primary hover:bg-black transition-colors ease-in duration-200">Close
-								Confirmation</button>
+								class="btn px-16 text-white btn-md bg-primary hover:bg-black transition-colors ease-in duration-200">
+								Close Confirmation
+							</button>
 						</form>
 					</dialog>
 					<!-- -----modal 2nd end------->
@@ -183,10 +229,10 @@
 		</section>
 		<!-- Aid for Injured in the Quota Movement section -->
 		<section class="bg-white flex flex-col md:flex-row border rounded-xl p-8 mb-8 gap-5">
-			<img class="md:w-4/12 " src="./assets/quota-protest.png" alt="">
+			<img class="md:w-4/12" src="./assets/quota-protest.png" alt="" />
 			<div class="md:ml-8">
 				<div class="btn flex items-center gap-3 mb-4 w-3/6 md:w-3/12">
-					<img class="w-6 h-6" src="./assets/coin.png" alt="">
+					<img class="w-6 h-6" src="./assets/coin.png" alt="" />
 					<div>
 						<span id="third-balance">2400</span>
 						<span>BDT</span>
@@ -194,47 +240,49 @@
 				</div>
 				<!-- text content -->
 				<div class="space-y-5">
-					<h2 class="text-xl font-semibold">Donate for Flood at Noakhali, Bangladesh</h2>
-					<p class="text-secondary2 font-light"> The recent floods in Noakhali have caused significant
-						damage
-						to
-						homes
-						infrastructure. Your
-						donation
-						will help provide essential supplies and to those affected by this disaster. Every contribution,
-						big
-						or small, makes difference. Please join us in supporting the relief efforts and making a
-						positive
-						impact on the lives of those in need.</p>
-					<label class=" form-control w-full">
+					<h2 id="thrid-place-name" class="text-xl font-semibold">
+						Aid for Injured in the Quota Movement
+					</h2>
+					<p class="text-secondary2 font-light">
+						The recent floods in Noakhali have caused significant damage to
+						homes infrastructure. Your donation will help provide essential
+						supplies and to those affected by this disaster. Every
+						contribution, big or small, makes difference. Please join us in
+						supporting the relief efforts and making a positive impact on the
+						lives of those in need.
+					</p>
+					<label class="form-control w-full">
 						<input id="third-input-field" type="text" placeholder="Write Donation Amount"
 							class="input input-bordered w-full py-7" />
 					</label>
-					<button id="third-donate-btn" class="btn bg-primary text-xl text-secondary w-full hover:bg-primary"
-						onclick="my_modal_3.showModal()">Donate
-						Now</button>
+					<button id="third-donate-btn" class="btn bg-primary text-xl text-secondary w-full hover:bg-primary">
+						Donate Now
+					</button>
 					<!-- -----modal 3rd start----- -->
 					<dialog id="my_modal_3" class="modal mx-auto">
 						<form method="dialog"
 							class="modal-box px-5 py-10 flex flex-col justify-center items-center bg-white rounded-3xl">
 							<h3 class="font-bold text-3xl my-5">Congrates!</h3>
-							<img src="./assets/coin.png" alt="">
+							<img src="./assets/coin.png" alt="" />
 							<div class="text-center">
 								<p class="mt-2">You Have Donate Humankind</p>
 							</div>
 							<p class="my-2 text-xl text-black font-bold">Successfully</p>
 							<button
-								class="btn px-16 btn-md text-white bg-primary hover:bg-black transition-colors ease-in duration-200">Close
-								Confirmation</button>
+								class="btn px-16 btn-md text-white bg-primary hover:bg-black transition-colors ease-in duration-200">
+								Close Confirmation
+							</button>
 						</form>
 					</dialog>
 					<!-- -----modal 3rd end------->
 				</div>
 			</div>
 		</section>
+		<!-- History -->
 	</main>
-	<script src="./js/utilities.js"></script>
-	<script src="./js/donate.js"></script>
+	<div id="history" class="hidden flex flex-col gap-3 min-h-72"></div>
+	<script src="js/donate.js"></script>
+	<script src="js/utilities.js"></script>
 </body>
 
 </html>
