@@ -2,6 +2,7 @@ document
 	.getElementById("first-donate-btn")
 	.addEventListener("click", function () {
 		const addMoney = getInputFieldValueById("first-input-field");
+		console.log(addMoney)
 		const balance = parseFloat(getTextFieldValueById("first-amount"));
 		const totalAmount = parseFloat(getTextFieldValueById("total-balance"));
 
@@ -54,7 +55,7 @@ document
 
 		if (isNaN(addMoney) || addMoney <= 0) {
 			alert("Invalid Donation Amount");
-			return;
+
 		}
 		if (addMoney > totalAmount) {
 			alert("Donation exceeds available balance");
